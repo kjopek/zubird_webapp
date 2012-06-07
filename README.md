@@ -6,12 +6,12 @@ Description
 zubird_webapp is a simple django-based application for my father's company. The most noticeable feature is support for incoming
 geographic's data from customers.
 
-# Requirements
+### Requirements
 * SQL database (suggested: PostgreSQL)
 * GIS engine
 * django-floppyforms
 
-# Installation
+### Installation
 * Ensure your environment meet the requirements
 * Clone project from repository
 * In the simplest case: python manage.py runserver
