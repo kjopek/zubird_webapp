@@ -10,6 +10,7 @@ geographic's data from customers.
 * SQL database (suggested: PostgreSQL)
 * GIS engine
 * django-floppyforms
+* memcached with py-memcached
 
 ### Installation
 * Ensure your environment meet the requirements
