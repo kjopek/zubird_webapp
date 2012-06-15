@@ -8,7 +8,7 @@ geographic's data from customers.
 
 ### Requirements
 * SQL database (suggested: PostgreSQL)
-* GIS engine
+* GIS engine (PostGIS)
 * django-floppyforms
 * memcached with py-memcached
 
