@@ -3,6 +3,8 @@ from django.conf.urls import patterns, include, url
 from django.contrib.gis import admin
 admin.autodiscover()
 
+from contact.views import index,send
+
 urlpatterns = patterns('',
     # Examples:
     # url(r'^$', 'zubird.views.home', name='home'),
@@ -13,7 +15,7 @@ urlpatterns = patterns('',
 
     # Uncomment the next line to enable the admin:
     url(r'^admin/', include(admin.site.urls)),
-    url(r'^send/', 'contact.views.send'),
-    url(r'^/', 'contact.views.index'),
+    url(r'^send/', index),
+    url(r'^$', send),
     
 )
