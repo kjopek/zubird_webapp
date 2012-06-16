@@ -3,4 +3,6 @@
 {% block options %}{{ block.super }}
 options['base_layer'] = new OpenLayers.Layer.Google("Google Streets", {numZoomLevels: 20, units: 'm'});
 options['point_zoom'] = 14;
+options['default_lat'] = 49.983333;
+options['default_lon'] = 20.433333;
 {% endblock %}

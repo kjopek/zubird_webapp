@@ -6,6 +6,7 @@
     <title>Zakład Usługowy Budowy i Remontu Dróg</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/static/css/bootstrap.css">
+    <link href='http://fonts.googleapis.com/css?family=Gentium+Basic:400,400italic,700italic,700&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
     <style type="text/css">
       body {
 	background: center 38px url('/static/img/22-blueprint.jpg') no-repeat;
@@ -15,6 +16,7 @@
 	padding: 9px 0;
       }
     </style>
+    {{ form.media }}
     <link href="/static/css/bootstrap-responsive.css" rel="stylesheet">
     <link href="/static/css/main.css" rel="stylesheet">
     <script type="text/javascript" src="/static/js/bootstrap.js"></script>
@@ -125,61 +127,40 @@
 
     <div class="row-fluid">
       <div class="span6">
-	<form class="form-horizontal">
-	  <fieldset>
-	    <legend>Formularz kontaktowy</legend>
-	      <div class="control-group">
-		<label class="control-label" for="input01">Imię i nazwisko</label>
-		<div class="controls">
-		  <input type="text" class="input-xlarge" id="input01">
-		</div>
-	      </div>
-	      <div class="control-group">
-		<label class="control-label" for="input02">Adres zwrotny</label>
-		<div class="controls">
-		  <input type="text" class="input-xlarge" id="input02">
-		  <p class="help-block">adres email</p>
-		</div>
-	      </div>
-	      <div class="control-group">
-		<label class="control-label" for="input03">Telefon kontaktowy</label>
-		<div class="controls">
-		  <input type="text" class="input-xlarge" id="input03">
-		</div>
-	      </div>
-	      <div class="control-group">
-		<label class="control-label" for="input04">Lokalizacja zlecenia</label>
-		<div class="controls">
-		  <input type="text" class="input-xlarge" id="input04">
-		  <p class="help-block">Adres: miasto, ulica, numer domu</p>
-		</div>
-	      </div>
-	      <div class="control-group">
-		<label class="control-label" for="jobType">Typ robót</label>
-		<div class="controls">
-		  <select class="span3" id="jobType">
-		    <option value="0">---------------------</option>
-		    <option value="1">remont / budowa drogi</option>
-		    <option value="2">kostka brukowa</option>
-		    <option value="3">remonty wnętrz</option>
-		    <option value="4">remonty generalne budynków</option>
-		  </select>
-		</div>
-	      </div>
-	      <div class="control-group">
-		<label class="control-label" for="jobDescription">Opis zlecenia</label>
-		<div class="controls">
-		  <textarea class="span4" id="jobDescription"></textarea>
-		  <p class="help-block">Ogólny opis zakresu prac</p>
-		</div>
-	      </div>
-  
-           <div class="form-actions">
-            <button type="submit" class="btn btn-primary"><i class="icon-envelope icon-white"></i> Wyślij</button>
-            <button class="btn"><i class="icon-remove"></i> Wyczyść</button>
-          </div>
-	  </fieldset>
-	</form>
+		<form class="form-horizontal" method="POST" action="/send/">
+		  <fieldset>
+	 	 	{% csrf_token %}
+	 	 	
+	 	 	<div class="control-group">
+            	{{ form.username.errors }}
+            	<label for="id_username" class="control-label">Imię i nazwisko</label>
+            	<div class="controls">
+            	{{ form.username }}
+            	</div>
+			</div>
+	 	 	
+	 	 	<div class="control-group">
+            	{{ form.email.errors }}
+            	<label for="id_email" class="control-label">Adres e-mail</label>
+            	<div class="controls">
+            	{{ form.email }}
+            	</div>
+			</div>
+	 	 	
+	  		{% for field in form %}
+        	<div class="control-group">
+            	{{ field.errors }}
+            	{{ field.label_tag }}
+            	<div class="controls">
+            	{{ field }}
+            	</div>
+			</div>
+    		{% endfor %}
+	  		<div class="form-actions">
+	  			<button type="submit" class="btn btn-primary"><i class="icon-envelope icon-white"></i> Wyślij</button>
+	  		</div>
+	  	  </fieldset>
+		</form>
       </div>
 
       <div class="span4 offset2">
