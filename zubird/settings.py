@@ -85,6 +85,8 @@ STATICFILES_FINDERS = (
 #    'django.contrib.staticfiles.finders.DefaultStorageFinder',
 )
 
+ADMIN_MEDIA_PREFIX = '/admin/'
+
 # Make this unique, and don't share it with anybody.
 SECRET_KEY = '!ap8@anejq^s0#)eud7gvcqw(36+$s4xbmge+ks_r-+hr$$192'
 
@@ -127,6 +129,7 @@ INSTALLED_APPS = (
     # Uncomment the next line to enable the admin:
     'django.contrib.gis.admin',
     'django.contrib.admin',
+    'django.contrib.localflavor',
     # Uncomment the next line to enable admin documentation:
     # 'django.contrib.admindocs',
     'contact'
@@ -157,13 +160,22 @@ LOGGING = {
             'level': 'ERROR',
             'filters': ['require_debug_false'],
             'class': 'django.utils.log.AdminEmailHandler'
-        }
+        },
+        'console': {
+            'level': 'DEBUG',
+            'class':'logging.StreamHandler',
+        },
     },
     'loggers': {
         'django.request': {
-            'handlers': ['mail_admins'],
-            'level': 'ERROR',
+            'handlers': ['mail_admins', 'console'],
+            'level': 'DEBUG',
             'propagate': True,
         },
+    'contact.views': {
+            'handlers': ['console'],
+            'level': 'DEBUG',
+            'propagate': True,
+                     }
     }
 }

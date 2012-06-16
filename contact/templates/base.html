@@ -1,48 +1,5 @@
-{% load i18n %}
-<!DOCTYPE html>
-<html lang="pl">
-  <head>
-    <meta charset="utf-8">
-    <title>Zakład Usługowy Budowy i Remontu Dróg</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/static/css/bootstrap.css">
-    <link href='http://fonts.googleapis.com/css?family=Gentium+Basic:400,400italic,700italic,700&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
-    <style type="text/css">
-      body {
-	background: center 38px url('/static/img/22-blueprint.jpg') no-repeat;
-	  
-      }
-      .sidebar-nav {
-	padding: 9px 0;
-      }
-    </style>
-    {{ form.media }}
-    <link href="/static/css/bootstrap-responsive.css" rel="stylesheet">
-    <link href="/static/css/main.css" rel="stylesheet">
-    <script type="text/javascript" src="/static/js/bootstrap.js"></script>
-  </head>
-  <body>
-      <div class="navbar">
-	<div class="navbar-inner">
-	  <div class="container-fluid">
-	    <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-	      <span class="icon-bar"></span>
-	      <span class="icon-bar"></span>
-	      <span class="icon-bar"></span>
-	    </a>
-	    <a class="brand" href="#">ZUBIRD</a>
-	    <div class="nav-collapse">
-	      <ul class="nav">
-		<li class="active"><a href="#">Strona główna</a></li>
-		<li><a href="#kontakt">Kontakt</a></li>
-		<li class="divider-vertical"></li>
-		<li><a href="#oferta">Oferta</a></li>
-	      </ul>
-	  </div><!--/.nav-collapse -->
-	  </div>
-	</div>
-      </div>
-
+{% extends 'skeleton.html' %}
+{% block content %}
     <div class="container">
       <div class="hero-unit">
 	<h1>Co możemy dla Państwa zrobić?</h1>
@@ -133,7 +90,7 @@
 	 	 	
 	 	 	<div class="control-group">
             	{{ form.username.errors }}
-            	<label for="id_username" class="control-label">Imię i nazwisko</label>
+            	<label for="id_username" class="control-label">{{form.username.label}}</label>
             	<div class="controls">
             	{{ form.username }}
             	</div>
@@ -141,21 +98,52 @@
 	 	 	
 	 	 	<div class="control-group">
             	{{ form.email.errors }}
-            	<label for="id_email" class="control-label">Adres e-mail</label>
+            	<label for="id_email" class="control-label">{{form.email.label}}</label>
             	<div class="controls">
             	{{ form.email }}
             	</div>
 			</div>
-	 	 	
-	  		{% for field in form %}
-        	<div class="control-group">
-            	{{ field.errors }}
-            	{{ field.label_tag }}
+			
+			<div class="control-group">
+            	{{ form.phone.errors }}
+            	<label for="id_phone" class="control-label">{{ form.phone.label }}</label>
             	<div class="controls">
-            	{{ field }}
+            	{{ form.phone }}
             	</div>
 			</div>
-    		{% endfor %}
+	 	 	
+	 	 	<div class="control-group">
+            	{{ form.location.errors }}
+            	<label for="id_location" class="control-label">{{ form.location.label }}</label>
+            	<div class="controls">
+            	{{ form.location }}
+            	</div>
+			</div>
+			
+			<div class="control-group">
+            	{{ form.job.errors }}
+            	<label for="id_job" class="control-label">{{ form.job.label }}</label>
+            	<div class="controls">
+            	{{ form.job }}
+            	</div>
+			</div>
+			
+			<div class="control-group">
+            	{{ form.description.errors }}
+            	<label for="id_description" class="control-label">{{ form.description.label }}</label>
+            	<div class="controls">
+            	{{ form.description }}
+            	</div>
+			</div>
+	 	 	
+			<div class="control-group">
+            	{{ form.area.errors }}
+            	<label for="id_area" class="control-label">{{ form.area.label }}</label>
+            	<div class="controls">
+            	{{ form.area }}
+            	</div>
+			</div>
+
 	  		<div class="form-actions">
 	  			<button type="submit" class="btn btn-primary"><i class="icon-envelope icon-white"></i> Wyślij</button>
 	  		</div>
@@ -176,14 +164,4 @@
     </div>
 
    </div>
-
-   <div class="container">
-      <footer class="footer">
-	<p class="pull-right"><a href="#">Wróć na początek strony</a></p>
-	<p>&copy; ZUBIRD 2012</p>
-	<p><small>Code licensed under the <a href="http://www.apache.org/licenses/LICENSE-2.0" target="_blank">Apache License v2.0</a>. Documentation licensed under <a href="http://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a>.</small></p>
-	<p><small>Icons from <a href="http://glyphicons.com">Glyphicons Free</a>, licensed under <a href="http://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a>.</small></p>
-      </footer>
-  </div>
-  </body>
-</html>
+{% endblock %}

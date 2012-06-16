@@ -2,7 +2,9 @@
 
 import floppyforms as forms
 #import django.forms as forms
+from django.utils.translation import ugettext as _
 from models import Message
+
 class GMapPolygonWidget(forms.gis.BaseGMapWidget,
                         forms.gis.PolygonWidget):
     pass
@@ -13,6 +15,6 @@ class ContactForm(forms.Form):
     phone = forms.RegexField('\d{9}', label=_(u'Phone'), max_length=12)
     location = forms.CharField(label=_(u'Location'), max_length=50)
     job = forms.ChoiceField(label=_(u'Job type'), choices=Message.JOB_TYPE)
-    description = forms.TextField(label=_(u'Job description'))
+    description = forms.CharField(label=_(u'Job description'), widget=forms.Textarea)
     area = forms.gis.PolygonField(label=_(u'Area'), widget=GMapPolygonWidget)
     

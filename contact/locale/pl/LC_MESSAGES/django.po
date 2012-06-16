@@ -21,52 +21,52 @@ msgstr ""
 
 #: forms.py:13 models.py:13
 msgid "First and last name"
-msgstr ""
+msgstr "Imię i nazwisko"
 
 #: forms.py:14 models.py:14
 msgid "Email"
-msgstr ""
+msgstr "Adres email"
 
 #: forms.py:15 models.py:15
 msgid "Phone"
-msgstr ""
+msgstr "Telefon"
 
 #: forms.py:16 models.py:16
 msgid "Location"
-msgstr ""
+msgstr "Lokalizacja"
 
 #: forms.py:17 models.py:17
 msgid "Job type"
-msgstr ""
+msgstr "Typ robót"
 
 #: forms.py:18 models.py:18
 msgid "Job description"
-msgstr ""
+msgstr "Opis robót"
 
 #: forms.py:19
 msgid "Area"
-msgstr ""
+msgstr "Obszar"
 
 #: models.py:9
 msgid "Repairs / building roads"
-msgstr ""
+msgstr "Naprawa / budowa dróg"
 
 #: models.py:10
 msgid "Sett"
-msgstr ""
+msgstr "Kostka brukowa"
 
 #: models.py:11
 msgid "General repairs of building"
-msgstr ""
+msgstr "Remonty generalne budynków"
 
 #: models.py:19
 msgid "Job area"
-msgstr ""
+msgstr "Obszar prac"
 
 #: models.py:20
 msgid "Added"
-msgstr ""
+msgstr "Dodano"
 
 #: models.py:27
 msgid "Messages"
-msgstr ""
+msgstr "Wiadomości"
