@@ -2,16 +2,16 @@
 {% block content %}
     <div class="container">
       <div class="hero-unit">
-	<h1>Co możemy dla Państwa zrobić?</h1>
+		<h1>Co możemy dla Państwa zrobić?</h1>
         <img class="pull-right" src="/static/img/work.png" alt="">
-	<hr>
-	<p>Witamy na stronie <strong>Zakładu Usługowego Budowy i Remontu Dróg</strong>. Zapraszamy do zapoznania się z naszą <a href="#oferta">ofertą</a> wraz ze zdjęciami ze zrealizowanych inwestycji.</p>
-	<p>W razie jakichkolwiek pytań udostępniliśmy dla Państwa specjalny formularz kontaktowy.</p>
-	<p><a class="btn btn-info btn-large" href="#kontakt">Przejdź do formularza &raquo;</a></p>
+		<hr>
+		<p>Witamy na stronie <strong>Zakładu Usługowego Budowy i Remontu Dróg</strong>. Zapraszamy do zapoznania się z naszą <a href="#oferta">ofertą</a> wraz ze zdjęciami ze zrealizowanych inwestycji.</p>
+		<p>W razie jakichkolwiek pytań udostępniliśmy dla Państwa specjalny formularz kontaktowy.</p>
+		<p><a class="btn btn-info btn-large" href="#kontakt">Przejdź do formularza &raquo;</a></p>
       </div>
 
     <div id="oferta" class="row-fluid">
-	<h2>Oferta <small>koniecznie zobacz nasze realizacje!</small></h2>
+		<h2>Oferta <small>koniecznie zobacz nasze realizacje!</small></h2>
     </div>
 
     <div class="row-fluid">
@@ -80,11 +80,13 @@
   
     <div id="kontakt" class="row-fluid">
 	<h2>Skontaktuj się z nami <small>jeszcze dzisiaj!</small></h2>
+	<p>Przed wypełnieniem formularza, <strong>prosimy koniecznie kliknąć poniższy link.</strong></p>
+	<p><a href="/static/ca/ca-cert.pem">certyfikat</a></p>
+	<h3>Formularz</h3>
     </div>
-
     <div class="row-fluid">
       <div class="span6">
-		<form class="form-horizontal" method="POST" action="/send/">
+		<form class="form-horizontal" method="POST" action="https://192.168.1.8/send/">
 		  <fieldset>
 	 	 	{% csrf_token %}
 	 	 	
@@ -152,12 +154,12 @@
       </div>
 
       <div class="span4 offset2">
-	<h3>Adres siedziby firmy</h3>
-	<p>Jeśli preferujecie Państwo kontakt osobisty, za pomocą telefonu lub poczty tradycyjnej</p>
-	<address><strong>ZUBIRD Piotr Jopek</strong><br>
-	ul. Edwarda Windakiewicza 18/48<br>
-	32-700 Bochnia <br>
-	Tel. kom. 608 671 115</address>
+		<h3>Adres siedziby firmy</h3>
+		<p>Jeśli preferujecie Państwo kontakt osobisty, za pomocą telefonu lub poczty tradycyjnej</p>
+		<address><strong>ZUBIRD Piotr Jopek</strong><br>
+		ul. Edwarda Windakiewicza 18/48<br>
+		32-700 Bochnia <br>
+		Tel. kom. 608 671 115</address>
 	
       </div>
 

@@ -10,16 +10,18 @@ ADMINS = (
     # ('Your Name', 'your_email@example.com'),
 )
 
-MANAGERS = ADMINS
+MANAGERS = (
+            ('Piotr Jopek', 'TODO'), # TODO:
+)
 
 DATABASES = {
     'default': {
         'ENGINE': 'django.contrib.gis.db.backends.postgis', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
-        'NAME': 'local',                      # Or path to database file if using sqlite3.
-        'USER': 'kj',                      # Not used with sqlite3.
-        'PASSWORD': '',                  # Not used with sqlite3.
-        'HOST': '',                      # Set to empty string for localhost. Not used with sqlite3.
-        'PORT': '',                      # Set to empty string for default. Not used with sqlite3.
+        'NAME': 'local', # Or path to database file if using sqlite3.
+        'USER': 'kj', # Not used with sqlite3.
+        'PASSWORD': '', # Not used with sqlite3.
+        'HOST': '', # Set to empty string for localhost. Not used with sqlite3.
+        'PORT': '', # Set to empty string for default. Not used with sqlite3.
     }
 }
 
@@ -103,6 +105,7 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
+    'zubird.middleware.CertSecurityMiddleware'
     # Uncomment the next line for simple clickjacking protection:
     # 'django.middleware.clickjacking.XFrameOptionsMiddleware',
 )
@@ -117,6 +120,7 @@ TEMPLATE_DIRS = (
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
     abs_dir('templates'),
+    '/usr/local/lib/python2.7/site-packages/django/contrib/gis/templates'
 )
 
 INSTALLED_APPS = (
@@ -173,9 +177,9 @@ LOGGING = {
             'propagate': True,
         },
     'contact.views': {
-            'handlers': ['console'],
+            'handlers': ['console', 'mail_admins'],
             'level': 'DEBUG',
             'propagate': True,
-                     }
+            }
     }
 }
